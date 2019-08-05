@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Customers
     {
         //Member Variables
-        //123 test
+
         //Constructor
 
         //Member Methods
