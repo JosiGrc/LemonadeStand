@@ -17,7 +17,7 @@ namespace LemonadeStand
         //Constructor
         public Weather()
         {
-            weather = new List<string>() {"Sunny", "Cloudy", "Rainy", "Partly Cloudy"};
+            weather = new List<string>() {"Sunny", "Cloudy", "Rainy", "Partly Cloudy", "Partly Snny", "Drizzle", "Windy"};
             Temp = GetWeather();
         }
 
