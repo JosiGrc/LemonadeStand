@@ -22,8 +22,7 @@ namespace LemonadeStand
             SugarCups = 0;
             Cups = 0;
             IceCubes = 0;
-            Money = 0;
-
+            Money = 20;
         }
 
         //Member Methods

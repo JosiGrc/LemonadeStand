@@ -13,9 +13,10 @@ namespace LemonadeStand
         //Constructor
         public Player()
         {
-
+            //buyingItems = 
         }
 
         //Member Methods
+       // public 
     }
 }

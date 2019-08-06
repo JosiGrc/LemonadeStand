@@ -9,20 +9,45 @@ namespace LemonadeStand
     class Store
     {
         //Member Variables
-        public string Lemons;
-        public string SugarCups;
-        public string IceCups;
-        public string Cups;
+        public int lemons;
+        public int sugarCups;
+        public int iceCups;
+        public int cups;
 
         //Constructor
         public Store()
         {
-            Console.WriteLine("How many Lemons would you like to buy?");
-            Console.WriteLine("How many cups of Sugar are you buying?");
-            Console.WriteLine("How many cups of Ice are you getting?");
-            Console.WriteLine("How many Cups are you buying?");
+            lemons = gettingLemons();
+            sugarCups = gettingSugar();
+            iceCups = gettingIce();
+            cups = gettingCups();
+
         }
 
         //Member Methods
+        public int gettingLemons()
+        {
+            Console.WriteLine("How many lemons you buying?");
+            Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+        }
+        public int gettingSugar()
+        {
+            Console.WriteLine("How many cups of Sugar are you buying?");
+            Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+        }
+        public int gettingIce()
+        {
+            Console.WriteLine("How many cups of ice are you buying?");
+            Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+        }
+        public int gettingCups()
+        {
+            Console.WriteLine("How many cups we buying?");
+            Console.ReadLine();
+            return int.Parse(Console.ReadLine());
+        }
     }
 }

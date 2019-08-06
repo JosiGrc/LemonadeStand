@@ -18,10 +18,9 @@ namespace LemonadeStand
         //Constructor
         public Weather()
         {
-            weather = new List<string>() {"Sunny", "Cloudy", "Rainy", "Partly Cloudy", "Partly Snny", "Drizzle", "Breezy", "Windy"};
-            temperature = GetTemperature();
-            todaysWeather = GetWeather();
-
+            weather = new List<string>() {"Sunny", "Breezy", "Partly Cloudy", "Partly Sunny", "Drizzle", "Windy", "Rainy", "Cloudy" }; 
+            temperature = GetTemperature(); 
+            todaysWeather = GetWeather(); //Bad weather starts at index 4 until end (index 7)
         }
 
         //Member Methods
