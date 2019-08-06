@@ -9,8 +9,9 @@ namespace LemonadeStand
     class Day
     {
         //Member Variables
-        public int Time;
+        // public DateTime Time;
         public int DayCounter;
+        public string People;
 
         //Constructor
         public Day()

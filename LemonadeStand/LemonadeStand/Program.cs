@@ -10,6 +10,7 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+            Weather test = new Weather();
         }
     }
 }

@@ -10,23 +10,34 @@ namespace LemonadeStand
     {
         //Member Variables
         public List<string> weather;
-        public int Temp;
+        public int temperature;
+        public string todaysWeather;
 
 
 
         //Constructor
         public Weather()
         {
-            weather = new List<string>() {"Sunny", "Cloudy", "Rainy", "Partly Cloudy", "Partly Snny", "Drizzle", "Windy"};
-            Temp = GetWeather();
+            weather = new List<string>() {"Sunny", "Cloudy", "Rainy", "Partly Cloudy", "Partly Snny", "Drizzle", "Breezy", "Windy"};
+            temperature = GetTemperature();
+            todaysWeather = GetWeather();
+
         }
 
         //Member Methods
-        public int GetWeather()
+        public int GetTemperature()
         {
             Random random = new Random();
-            int temp = random.Next(55, 111);
-            return temp;
+            int temperature = random.Next(55, 111);
+            return temperature;
+        }
+
+        public string GetWeather()
+        {
+            Random random = new Random();
+            int randomIndex = random.Next(weather.Count);
+            return weather[randomIndex];
+
         }
 
     }

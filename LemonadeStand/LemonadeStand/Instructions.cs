@@ -6,17 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game 
+    class Instructions
     {
-        //Member Variables
-        List<Day> week;
-
-        //Constructor
-        public Game()
-        {
-
-        }
-
-        //Member Methods
     }
 }
