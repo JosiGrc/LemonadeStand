@@ -18,14 +18,10 @@ namespace LemonadeStand
         //Constructor
         public Game()
         {
-            lemonsBought = BuyingLemons();
-            sugarCupsBought = BuyingSugar();
-            iceCubesBought = BuyingIce();
-            cupsBought = BuyingCups();
+          
         }
 
-        //Member Methods*
-        //so when the player buys things from the store they will be added to the inventory. money will also be subtracted from their total
+        //Member Methods
         public int AddingLemonsToInvetory(int lemons, int lemonsBought)
         {
             lemons = lemonsBought + lemons;

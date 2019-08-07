@@ -26,6 +26,11 @@ namespace LemonadeStand
             sugarCupsPrice = .75;
             icePrice = .99;
             cupsPrice = .99;
+            lemonsBought = BuyingLemons();
+            sugarCupsBought = BuyingSugar();
+            iceCubesBought = BuyingIce();
+            cupsBought = BuyingCups();
+
         
         }
 
@@ -38,7 +43,7 @@ namespace LemonadeStand
         }
         public int BuyingSugar()
         {
-            Console.WriteLine("How many cups of Sugar are you buying?");
+            Console.WriteLine("How many cups of sugar are you buying?");
             sugarCupsBought = int.Parse(Console.ReadLine());
             return sugarCupsBought;
         }
