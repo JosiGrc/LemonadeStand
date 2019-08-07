@@ -20,10 +20,11 @@ namespace LemonadeStand
         //Member Methods
         public string GettingBoughtItems()
         {
+            throw new NotImplementedException();
 
         }
-        
 
-       
+
+
     }
 }

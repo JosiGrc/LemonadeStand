@@ -17,6 +17,8 @@ namespace LemonadeStand
             Customer test = new Customer(weather.temperature, weather.todaysWeather);
             Console.ReadLine();
             Store testore = new Store();
+            Game game = new Game();
+            Console.ReadLine();
         }
     }
 }
