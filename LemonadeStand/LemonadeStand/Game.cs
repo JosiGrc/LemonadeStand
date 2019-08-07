@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Game 
     {
         //Member Variables
-        List<Day> week;
+        
 
         //Constructor
         public Game()
@@ -18,5 +18,9 @@ namespace LemonadeStand
         }
 
         //Member Methods
+        public string AddingToInvetory()
+        {
+
+        }
     }
 }

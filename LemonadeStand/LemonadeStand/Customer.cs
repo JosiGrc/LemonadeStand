@@ -25,9 +25,6 @@ namespace LemonadeStand
 
         //Member Methods
 
-        //if both if statements are true then gordon, tony & ron come outside
-        //otherwise cersei and squidward come outside
-        //then michael and dwight go outside regardless
         public bool PeoplesWeatherPreferance(int temperature, string weather)
         {   
             if (temperature > 75)

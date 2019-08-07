@@ -9,14 +9,21 @@ namespace LemonadeStand
     class Player : Inventory
     {
         //Member Variables
+        public string itemsBought;
 
         //Constructor
         public Player()
         {
-            //buyingItems = 
+            
         }
 
         //Member Methods
-       // public 
+        public string GettingBoughtItems()
+        {
+
+        }
+        
+
+       
     }
 }
