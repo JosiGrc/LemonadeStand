@@ -21,6 +21,7 @@ namespace LemonadeStand
             weather = new List<string>() {"Sunny", "Breezy", "Partly Cloudy", "Partly Sunny", "Drizzle", "Windy", "Rainy", "Cloudy" }; 
             temperature = GetTemperature(); 
             todaysWeather = GetWeather(); //Bad weather starts at index 4 until end (index 7)
+            Console.WriteLine("Its" + todaysWeather + " with a temperature of " + temperature+ " today");
         }
 
         //Member Methods

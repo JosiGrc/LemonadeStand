@@ -10,7 +10,12 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Weather test = new Weather();
+            //Weather test = new Weather();
+            Weather weather = new Weather();
+            weather.temperature = 70;
+            weather.todaysWeather = "Sunny";
+            Customer test = new Customer(weather.temperature, weather.todaysWeather);
+            Console.ReadLine();
         }
     }
 }
