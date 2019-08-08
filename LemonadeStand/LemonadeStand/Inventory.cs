@@ -13,22 +13,23 @@ namespace LemonadeStand
         public int sugarCups;
         public int iceCubes;
         public int cups;
-        public double Money;
+        public double money;
 
         //Constructor
         public Inventory()
+
         {
             lemons = 0;
             sugarCups = 0;
             cups = 0;
             iceCubes = 0;
-            Money = 20;
+            money = 20;
         }
 
         //Member Methods
-        public int GettingItemsFromStore()
-        {
-            return 0;
-        }
+        //public int AddingBoughtItemsToInvetory()
+        //{
+        //    return lemons;
+        //}
     }
 }

@@ -26,38 +26,59 @@ namespace LemonadeStand
             sugarCupsPrice = .75;
             icePrice = .99;
             cupsPrice = .99;
-            lemonsBought = BuyingLemons();
-            sugarCupsBought = BuyingSugar();
-            iceCubesBought = BuyingIce();
-            cupsBought = BuyingCups();
-
-        
+                  
         }
 
         //Member Methods
-        public int BuyingLemons()
+        public int BuyingLemons(int invLemons)
         {
             Console.WriteLine("How many lemons you buying?");
             lemonsBought = int.Parse(Console.ReadLine());
-            return lemonsBought;
+            return AddingLemonsToInvetory(invLemons);
         }
-        public int BuyingSugar()
+        public int AddingLemonsToInvetory(int lemons)
+        {
+            lemons = lemonsBought + lemons;
+            return lemons;
+        }
+
+
+        public int BuyingSugar(int invsugarcCups)
         {
             Console.WriteLine("How many cups of sugar are you buying?");
             sugarCupsBought = int.Parse(Console.ReadLine());
-            return sugarCupsBought;
+            return AddingSugarToInventory(invsugarcCups);
         }
-        public int BuyingIce()
+        public int AddingSugarToInventory(int sugarCups)
+        {
+            sugarCups = sugarCupsBought + sugarCups;
+            return sugarCups;
+        }
+
+        public int BuyingIce(int inviceCubes)
         {
             Console.WriteLine("How many ice cubes are you buying?");
             iceCubesBought = int.Parse(Console.ReadLine());
-            return iceCubesBought;
+            return AddingIceToInventory(inviceCubes);
         }
-        public int BuyingCups()
+        public int AddingIceToInventory(int iceCubes)
+        {
+            iceCubes = iceCubesBought + iceCubes;
+            return iceCubes;
+        }
+
+
+
+        public int BuyingCups(int invcups)
         {
             Console.WriteLine("How many cups we buying?");
             cupsBought = int.Parse(Console.ReadLine());
-            return cupsBought;
+            return AddingCupsToInventory(invcups);
+        }       
+        public int AddingCupsToInventory(int cups)
+        {
+            cups = cupsBought + cups;
+            return cups;
         }
     }
 }

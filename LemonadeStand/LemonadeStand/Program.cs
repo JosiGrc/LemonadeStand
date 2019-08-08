@@ -16,8 +16,14 @@ namespace LemonadeStand
             weather.todaysWeather = "Sunny";
             Customer test = new Customer(weather.temperature, weather.todaysWeather);
             Console.ReadLine();
+            Inventory inventory = new Inventory();
+            inventory.lemons = 0;
+
             Store testore = new Store();
+
+            inventory.lemons = testore.BuyingLemons(inventory.lemons);
             Game game = new Game();
+            //Inventory inventory = new Inventory();
             Console.ReadLine();
         }
     }
