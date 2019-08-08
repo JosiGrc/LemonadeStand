@@ -12,7 +12,6 @@ namespace LemonadeStand
         // public DateTime Time;
         public int DayCounter;
         public List<string>daysOfWeek;
-        public string People;
 
         //Constructor
         public Day()
@@ -21,9 +20,14 @@ namespace LemonadeStand
         }
 
         //Member Methods
-       public string GetTheDay()
+       public void
+            GetTheDay()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < daysOfWeek.Count; i++)
+            {
+            Console.WriteLine($"Today is {daysOfWeek[i]}");
+
+            }
         }
     }
 }

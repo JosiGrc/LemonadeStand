@@ -13,6 +13,7 @@ namespace LemonadeStand
         public int sugarCupsBought;
         public int iceCubesBought;
         public int cupsBought;
+        public int moneyLost;
         public double lemonPrice;
         public double sugarCupsPrice;
         public double icePrice;
@@ -24,13 +25,14 @@ namespace LemonadeStand
         {
             lemonPrice = .25;
             sugarCupsPrice = .75;
-            icePrice = .99;
+            icePrice = .10;
             cupsPrice = .99;
                   
         }
 
         //Member Methods
         public int BuyingLemons(int invLemons)
+
         {
             Console.WriteLine("How many lemons you buying?");
             lemonsBought = int.Parse(Console.ReadLine());
@@ -41,7 +43,20 @@ namespace LemonadeStand
             lemons = lemonsBought + lemons;
             return lemons;
         }
-
+        public double MoneyLostFromBuyingLemons(double money)
+        {
+            double totalCost = lemonsBought * lemonPrice;           
+            if (money < totalCost)
+            {
+                Console.WriteLine("You can't affor to buy lemons, guess you gotta wait till life gives you lemons.");
+            }
+            else
+            {
+                money = money - totalCost;
+                Console.WriteLine("You paid " + totalCost + " for " + lemonsBought + " lemons.");
+            }
+            return money;
+        }
 
         public int BuyingSugar(int invsugarcCups)
         {
@@ -53,6 +68,20 @@ namespace LemonadeStand
         {
             sugarCups = sugarCupsBought + sugarCups;
             return sugarCups;
+        }
+        public double MoneyLostFromBuyingSugar(double money)
+        {
+            double totalCost = sugarCupsBought * sugarCupsPrice;
+            if (money > totalCost)
+            {
+                Console.WriteLine("You can't afford sugar, I hope the unsweetened version of what you're making taste good.");
+            }
+            else
+            {
+                money = money - totalCost;
+                Console.WriteLine("You paid " + totalCost + " for " + sugarCupsBought + " cups of sugar.");
+            }
+            return money;
         }
 
         public int BuyingIce(int inviceCubes)
@@ -66,8 +95,20 @@ namespace LemonadeStand
             iceCubes = iceCubesBought + iceCubes;
             return iceCubes;
         }
-
-
+        public double MoneyLostFromBuyingIce(double money)
+        {
+            double totalCost = iceCubesBought * icePrice;
+            if (money > totalCost)
+            {
+                Console.WriteLine("Ouch water in a solid state is too pricy for you? Best rethink some life decisions.");
+            }
+            else
+            {
+                money = money - totalCost;
+                Console.WriteLine("You paid " + totalCost + " for " + iceCubesBought + " Ice Cubes.");
+            }
+            return money;
+        }
 
         public int BuyingCups(int invcups)
         {
@@ -80,5 +121,20 @@ namespace LemonadeStand
             cups = cupsBought + cups;
             return cups;
         }
+        public double MoneyLostFromBuyingCups(double money)
+        {
+            double totalCost = cupsBought * cupsPrice;
+            if (money > totalCost)
+            {
+                Console.WriteLine("Wow not even able to afford something so cheap, these are rough time indeed.");
+            }
+            else
+            {
+                money = money - totalCost;
+                Console.WriteLine("You paid " + totalCost + " for " + cupsBought + " cups.");
+            }
+            return money;
+        }
+        
     }
 }

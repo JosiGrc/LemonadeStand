@@ -11,19 +11,14 @@ namespace LemonadeStand
         static void Main(string[] args)
         {
            
-            Weather weather = new Weather();
-            weather.temperature = 70;
-            weather.todaysWeather = "Sunny";
+            Weather weather = new Weather();     
             Customer test = new Customer(weather.temperature, weather.todaysWeather);
-            Console.ReadLine();
-            Inventory inventory = new Inventory();
-            inventory.lemons = 0;
-
+            Inventory inventory = new Inventory();            inventory.lemons = 0;
             Store testore = new Store();
-
             inventory.lemons = testore.BuyingLemons(inventory.lemons);
-            Game game = new Game();
-            //Inventory inventory = new Inventory();
+            Store.          
+
+
             Console.ReadLine();
         }
     }

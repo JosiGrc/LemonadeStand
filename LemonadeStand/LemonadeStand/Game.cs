@@ -9,10 +9,8 @@ namespace LemonadeStand
     class Game 
     {
         //Member Variables
-        //public int lemonsBought;
-        //public int sugarCupsBought;
-        //public int iceCubesBought;
-        //public int cupsBought;
+        public int daysPlaying;
+        public string lemonadeStandName;
         
 
         //Constructor
@@ -22,6 +20,29 @@ namespace LemonadeStand
         }
 
         //Member Methods
+        public int HowManyDaysAreBeingPlayed()
+        {
+            Console.WriteLine("For howe many days is the lemonade stand going to be up for?");
+            daysPlaying = int.Parse(Console.ReadLine());
+            return daysPlaying;
+        }
+        public string WhatIsTheNameOfYourSTand()
+        {
+            Console.WriteLine("What do you want to name your Lemonade Stand?");
+            lemonadeStandName = Console.ReadLine();
+            return lemonadeStandName;
+        }
+
+
+        public void RunGame(int money, int getTemperature, string GetWeather)
+        {
+            //while (daysPlaying > 0 || && money > 0)
+            //getTemperature();
+            //GetWeather();
+        }
+
+
+       
        
     }
 }

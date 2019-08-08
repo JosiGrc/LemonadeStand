@@ -27,9 +27,6 @@ namespace LemonadeStand
         }
 
         //Member Methods
-        //public int AddingBoughtItemsToInvetory()
-        //{
-        //    return lemons;
-        //}
+     
     }
 }
