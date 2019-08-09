@@ -9,25 +9,23 @@ namespace LemonadeStand
     class Day
     {
         //Member Variables
-        // public DateTime Time;
-        public int DayCounter;
+                
         public List<string>daysOfWeek;
 
         //Constructor
         public Day()
         {
-            daysOfWeek = new List<string>(){"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+            daysOfWeek = new List<string>(){"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};            
         }
 
         //Member Methods
-       public void
-            GetTheDay()
-        {
+       public void GetTheDay()
+       {
             for (int i = 0; i < daysOfWeek.Count; i++)
             {
-            Console.WriteLine($"Today is {daysOfWeek[i]}");
-
+                Console.WriteLine($"Today is {daysOfWeek[i]}");                
             }
-        }
+       }
+      
     }
 }

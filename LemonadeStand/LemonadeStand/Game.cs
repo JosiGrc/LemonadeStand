@@ -16,33 +16,39 @@ namespace LemonadeStand
         //Constructor
         public Game()
         {
-          
+            daysPlaying = HowManyDaysAreBeingPlayed();
+            lemonadeStandName = WhatIsTheNameOfYourStand();
         }
 
         //Member Methods
-        public int HowManyDaysAreBeingPlayed()
+        private int HowManyDaysAreBeingPlayed()
         {
-            Console.WriteLine("For howe many days is the lemonade stand going to be up for?");
+            Console.WriteLine("For how many days is the lemonade stand going to be up for?"); 
             daysPlaying = int.Parse(Console.ReadLine());
+            for (int i = 0; i > 0; i --);
             return daysPlaying;
         }
-        public string WhatIsTheNameOfYourSTand()
+        
+        public string WhatIsTheNameOfYourStand()
         {
             Console.WriteLine("What do you want to name your Lemonade Stand?");
             lemonadeStandName = Console.ReadLine();
             return lemonadeStandName;
         }
-
-
-        public void RunGame(int money, int getTemperature, string GetWeather)
+        public object LemonadeRecipe()
         {
-            //while (daysPlaying > 0 || && money > 0)
-            //getTemperature();
-            //GetWeather();
+            Console.WriteLine(");
         }
+      
 
 
-       
-       
+
+
+
+
+
+
+
+
     }
 }
