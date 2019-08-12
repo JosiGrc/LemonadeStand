@@ -11,17 +11,15 @@ namespace LemonadeStand
         //Member Variables
         public int peopleInCity;
         public int peopleThatGoOutside;
+        
         //Constructor
         public People()
         {
-            peopleInCity = 595350;
+            peopleInCity = 55;
             peopleThatGoOutside = 0;
         }
 
         //Member Methods
-        public int peoplesPrefferedWeather()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

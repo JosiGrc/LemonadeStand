@@ -10,35 +10,49 @@ namespace LemonadeStand
     {
         //Member Variables
         public int daysPlaying;
-        public string lemonadeStandName;
+        public string lemonadeStandName;     
         
+
 
         //Constructor
         public Game()
         {
             daysPlaying = HowManyDaysAreBeingPlayed();
-            lemonadeStandName = WhatIsTheNameOfYourStand();
+            lemonadeStandName = WhatIsTheNameOfYourStand();       
+            
         }
 
         //Member Methods
         private int HowManyDaysAreBeingPlayed()
         {
-            Console.WriteLine("For how many days is the lemonade stand going to be up for?"); 
+            Console.WriteLine("For how many days is the lemonade stand going to be up for?");
             daysPlaying = int.Parse(Console.ReadLine());
-            for (int i = 0; i > 0; i --);
+            if (daysPlaying >= 100)
+            {
+                Console.WriteLine("If youre gonna be playing that long wouldn't it be better to have a real life lemonade stand?");
+                return HowManyDaysAreBeingPlayed();
+            }
             return daysPlaying;
         }
-        
+
         public string WhatIsTheNameOfYourStand()
         {
             Console.WriteLine("What do you want to name your Lemonade Stand?");
             lemonadeStandName = Console.ReadLine();
             return lemonadeStandName;
         }
-        public object LemonadeRecipe()
+
+        public void RunGame()
         {
-            Console.WriteLine(");
+            for (int i = 0; i < daysPlaying; daysPlaying--) 
+            {
+                
+            }
+
+
+
         }
+        
       
 
 

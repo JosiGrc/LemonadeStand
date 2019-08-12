@@ -13,7 +13,6 @@ namespace LemonadeStand
         public int sugarCupsBought;
         public int iceCubesBought;
         public int cupsBought;
-        public int moneyLost;
         public double lemonPrice;
         public double sugarCupsPrice;
         public double icePrice;

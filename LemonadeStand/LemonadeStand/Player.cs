@@ -9,20 +9,19 @@ namespace LemonadeStand
     class Player : Inventory
     {
         //Member Variables
-        public string itemsBought;
+        public double money;
+
 
         //Constructor
         public Player()
         {
-            
+            money = 20;
         }
+             
+        
 
         //Member Methods
-        public string GettingBoughtItems()
-        {
-            throw new NotImplementedException();
-
-        }
+        
 
 
 

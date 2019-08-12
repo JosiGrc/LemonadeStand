@@ -13,7 +13,7 @@ namespace LemonadeStand
         public int sugarCups;
         public int iceCubes;
         public int cups;
-        public double money;
+       
 
         //Constructor
         public Inventory()
@@ -23,7 +23,7 @@ namespace LemonadeStand
             sugarCups = 0;
             cups = 0;
             iceCubes = 0;
-            money = 20;
+           
         }
 
         //Member Methods
