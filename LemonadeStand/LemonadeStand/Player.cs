@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Player : Inventory
+    class Player
     {
         //Member Variables
+        public Inventory inventory;
         public double money;
 
 
@@ -16,8 +17,8 @@ namespace LemonadeStand
         public Player()
         {
             money = 20;
-        }
-             
+            inventory = new Inventory();
+        }        
         
 
         //Member Methods

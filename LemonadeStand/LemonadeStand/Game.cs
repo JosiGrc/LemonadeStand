@@ -8,7 +8,9 @@ namespace LemonadeStand
 {
     class Game 
     {
-        //Member Variables
+        //Member Variables (HAS A)
+        public Player player1;
+        public Store store;
         public int daysPlaying;
         public string lemonadeStandName;     
         
@@ -17,6 +19,8 @@ namespace LemonadeStand
         //Constructor
         public Game()
         {
+            player1 = new Player();
+            store = new Store();
             daysPlaying = HowManyDaysAreBeingPlayed();
             lemonadeStandName = WhatIsTheNameOfYourStand();       
             
