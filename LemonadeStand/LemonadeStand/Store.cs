@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public class Store
     {
         //Member Variables
         public int lemonsBought;
@@ -17,6 +17,7 @@ namespace LemonadeStand
         public double sugarCupsPrice;
         public double icePrice;
         public double cupsPrice;
+        
         
 
         //Constructor
@@ -42,7 +43,7 @@ namespace LemonadeStand
             lemons = lemonsBought + lemons;
             return lemons;
         }
-        public double MoneyLostFromBuyingLemons(double money)
+        public double MoneyLostFromBuyingLemons(double money, int lemonsBought)
         {
             double totalCost = lemonsBought * lemonPrice;           
             if (money < totalCost)
@@ -51,7 +52,7 @@ namespace LemonadeStand
             }
             else
             {
-                money = money - totalCost;
+                money -= totalCost;
                 Console.WriteLine("You paid " + totalCost + " for " + lemonsBought + " lemons.");
             }
             return money;
@@ -77,7 +78,7 @@ namespace LemonadeStand
             }
             else
             {
-                money = money - totalCost;
+                money -= totalCost;
                 Console.WriteLine("You paid " + totalCost + " for " + sugarCupsBought + " cups of sugar.");
             }
             return money;
@@ -103,7 +104,7 @@ namespace LemonadeStand
             }
             else
             {
-                money = money - totalCost;
+                money -= totalCost;
                 Console.WriteLine("You paid " + totalCost + " for " + iceCubesBought + " Ice Cubes.");
             }
             return money;

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class AddingIngerdientsToInventory
+    public class Man : Customer
     {
+
     }
 }
