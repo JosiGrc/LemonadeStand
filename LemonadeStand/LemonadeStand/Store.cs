@@ -17,6 +17,7 @@ namespace LemonadeStand
         public double sugarCupsPrice;
         public double icePrice;
         public double cupsPrice;
+        //public Inventory inventory;
         
         
 
@@ -31,19 +32,18 @@ namespace LemonadeStand
         }
 
         //Member Methods
-        public int BuyingLemons(int invLemons)
-
+        public int BuyingLemons()
         {
             Console.WriteLine("How many lemons you buying?");
             lemonsBought = int.Parse(Console.ReadLine());
-            return AddingLemonsToInvetory(invLemons);
+            return AddingLemonsToInvetory(lemonsBought);
         }
         public int AddingLemonsToInvetory(int lemons)
         {
             lemons = lemonsBought + lemons;
             return lemons;
         }
-        public double MoneyLostFromBuyingLemons(double money, int lemonsBought)
+        public double MoneyLostFromBuyingLemons(double money)
         {
             double totalCost = lemonsBought * lemonPrice;           
             if (money < totalCost)
@@ -58,11 +58,11 @@ namespace LemonadeStand
             return money;
         }
 
-        public int BuyingSugar(int invsugarcCups)
+        public int BuyingSugar()
         {
             Console.WriteLine("How many cups of sugar are you buying?");
             sugarCupsBought = int.Parse(Console.ReadLine());
-            return AddingSugarToInventory(invsugarcCups);
+            return AddingSugarToInventory(sugarCupsBought);
         }
         public int AddingSugarToInventory(int sugarCups)
         {
@@ -84,11 +84,11 @@ namespace LemonadeStand
             return money;
         }
 
-        public int BuyingIce(int inviceCubes)
+        public int BuyingIce()
         {
             Console.WriteLine("How many ice cubes are you buying?");
             iceCubesBought = int.Parse(Console.ReadLine());
-            return AddingIceToInventory(inviceCubes);
+            return AddingIceToInventory(iceCubesBought);
         }
         public int AddingIceToInventory(int iceCubes)
         {
@@ -110,11 +110,11 @@ namespace LemonadeStand
             return money;
         }
 
-        public int BuyingCups(int invcups)
+        public int BuyingCups()
         {
             Console.WriteLine("How many cups we buying?");
             cupsBought = int.Parse(Console.ReadLine());
-            return AddingCupsToInventory(invcups);
+            return AddingCupsToInventory(cupsBought);
         }       
         public int AddingCupsToInventory(int cups)
         {
@@ -130,10 +130,43 @@ namespace LemonadeStand
             }
             else
             {
-                money = money - totalCost;
+                money -= totalCost;
                 Console.WriteLine("You paid " + totalCost + " for " + cupsBought + " cups.");
             }
             return money;
+        }
+
+        public void BuyingItems()
+        {
+            Inventory inventory = new Inventory();
+            Console.WriteLine("What would you like to buy today, Cups, Ice, Sugar, Lemons or Nothing?");
+            string itemBeingBought = Console.ReadLine().ToLower();
+            switch (itemBeingBought)
+            {
+                case "Cups":
+                    BuyingCups();
+                    AddingCupsToInventory(inventory.cups);
+                    MoneyLostFromBuyingCups(inventory.money);
+                    break;
+                case "Ice":
+                    BuyingIce();
+                    AddingIceToInventory(inventory.iceCubes);
+                    MoneyLostFromBuyingIce(inventory.money);
+                    break;
+                case "Sugar":
+                    BuyingSugar();
+                    AddingSugarToInventory(inventory.sugarCups);
+                    MoneyLostFromBuyingSugar(inventory.money);
+                    break;
+                case "Lemons":
+                    BuyingLemons();
+                    AddingLemonsToInvetory(inventory.lemons);
+                    MoneyLostFromBuyingLemons(inventory.money);
+                    break;
+                case "Nothing":
+                    break;
+
+            }
         }
         
     }

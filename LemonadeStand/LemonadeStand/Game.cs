@@ -34,34 +34,50 @@ namespace LemonadeStand
 
         //Member Methods
 
-        private int HowManyDaysAreBeingPlayed()
-        {
-            Console.WriteLine("For how many days is the lemonade stand going to be up for?");
-            daysPlaying = int.Parse(Console.ReadLine());
-            if (daysPlaying >= 100)
-            {
-                Console.WriteLine("If youre gonna be playing that long wouldn't it be better to have a real life lemonade stand?");
-                return HowManyDaysAreBeingPlayed();
-            }
-            return daysPlaying;
-        }
+        //private int HowManyDaysAreBeingPlayed()
+        //{
+        //    Console.WriteLine("For how many days is the lemonade stand going to be up for?");
+        //    daysPlaying = int.Parse(Console.ReadLine());
+        //    if (daysPlaying >= 100)
+        //    {
+        //        Console.WriteLine("If youre gonna be playing that long wouldn't it be better to have a real life lemonade stand?");
+        //        return HowManyDaysAreBeingPlayed();
+        //    }
+        //    return daysPlaying;
+        //}
 
-        public string WhatIsTheNameOfYourStand()
-        {
-            Console.WriteLine("What do you want to name your Lemonade Stand?");
-            lemonadeStandName = Console.ReadLine();
-            return lemonadeStandName;
-        }
+        //public string WhatIsTheNameOfYourStand()
+        //{
+        //    Console.WriteLine("What do you want to name your Lemonade Stand?");
+        //    lemonadeStandName = Console.ReadLine();
+        //    return lemonadeStandName;
+        //}
 
         public void RunGame()
         {
+            Console.WriteLine("For how many days is the lemonade stand going to be up for?");
+            daysPlaying = int.Parse(Console.ReadLine());
+            Console.WriteLine("What do you want to name your Lemonade Stand?");
+            lemonadeStandName = Console.ReadLine();
+            Console.Clear();
+
             for (int i = 0; i < daysPlaying; daysPlaying--) 
             {
                 DisplayDay();
+                lemonadeStand.LemonadeStandInventory();
+                AvailableMoney();
+                store.BuyingCups();
+                store.BuyingIce();
+                store.BuyingLemons();
+                store.BuyingSugar();
+
+                
+
+
 
             }
 
-            
+
 
 
 
@@ -69,7 +85,7 @@ namespace LemonadeStand
         public void DisplayDay()
         {
             today.GetWeather();
-            Console.WriteLine("You are on day " + daysPlaying + ", todays weather is " + today.GetWeather() + "with a temperature of " + today.GetTemperature());
+            Console.WriteLine("You are on day " + daysPlaying + ", todays weather is " + today.GetWeather() + " with a temperature of " + today.GetTemperature());
         }
 
         public void SellLemonade()
@@ -103,6 +119,32 @@ namespace LemonadeStand
 
         }
 
+        public void ProfitOfTheDay()
+        {
+            lemonadeStand.moneyEarned += myRecipe.lemonadePrice;
+            Console.WriteLine("Today you " +lemonadeStandName + "earned " + lemonadeStand.moneyEarned );
+        }
+
+        public void ToTalProfit()
+        {
+            lemonadeStand.totalMoneyEarned += myRecipe.lemonadePrice;
+            Console.WriteLine("Over the course of " + daysPlaying + lemonadeStandName + "eraned a total of " + lemonadeStand.totalMoneyEarned);
+        }
+
+        public void AvailableMoney()
+        {
+            lemonadeStand.AvailableMoney();
+        }
+
+        public int ValidateDaysPlaying()
+        {
+            if (daysPlaying >= 100)
+            {
+                Console.WriteLine("If youre gonna be playing that long wouldn't it be better to have a real life lemonade stand?");
+                return ValidateDaysPlaying();
+            }
+            return daysPlaying;
+        }
 
 
 

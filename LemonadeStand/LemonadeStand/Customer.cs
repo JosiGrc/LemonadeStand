@@ -26,6 +26,31 @@ namespace LemonadeStand
             return random.Next(min, max);
         }
 
+        public void IceCubePreference()
+        {
+
+        }
+
+        public void SugarPreference()
+        {
+
+        }
+
+        public void LemonPreference()
+        {
+
+        }
+
+        public void ChancesOfBuyingLemomnade()
+        {
+
+        }
+
+        public void PriceWillingToPay()
+        {
+
+        }
+
 
     }
 }

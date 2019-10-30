@@ -18,14 +18,13 @@ namespace LemonadeStand
 
         //Constructor
         public Inventory()
-
         {
-            //lemons = 0;
-            //sugarCups = 0;
-            //cups = 0;
-            //iceCubes = 0;
-            //money = 15.75;
-           
+            lemons = 0;
+            sugarCups = 0;
+            cups = 0;
+            iceCubes = 0;
+            money = 15.75;
+
         }
 
         //Member Methods
