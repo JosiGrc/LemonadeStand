@@ -10,14 +10,14 @@ namespace LemonadeStand
     {
         //Member Variables
         public Inventory standInventory;
-        public LemonadeRecipe myLemonadeRecipe;
+        public LemonadeRecipe myLemonadeRecipe;  //Dependecies are reduced by having classes as variables and accesing their infor via dot notation
         public Store myStore;
         //public Man men;
         //public Child children;
         //public Woman women;
         public int cupsBoughtToday;
         public double moneyEarned;
-        public double totalMoneyEarned;
+        public double totalMoneyEarned;     //There is a stand class so the code is open to extension
 
         //Constructor
         public Stand()
@@ -166,7 +166,7 @@ namespace LemonadeStand
 
         public int AddingLemonsToLemonade()
         {
-            standInventory.lemons -= myLemonadeRecipe.lemonsInRecipe;
+            standInventory.lemons -= myLemonadeRecipe.lemonsInRecipe;  //Single responsibility principle, 3 methods to add 3 things seperatly
             return standInventory.lemons;
         }
 

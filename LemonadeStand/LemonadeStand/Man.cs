@@ -9,18 +9,16 @@ namespace LemonadeStand
     public class Man : Customer
     {
         //Member Variables
-        LemonadeRecipe lemonadeRecipe = new LemonadeRecipe();
-        public bool lemonsInRecipe;
-        public bool iceInRecipe;
-        public bool sugarInRecipe;
-        public bool priceofLemonade;
-        public int oddsOfLemonadeBeingPurchased;
+        public new bool lemonsInRecipe;
+        public new bool iceInRecipe;
+        public new bool sugarInRecipe;
+        public new bool priceofLemonade;
+        public new int oddsOfLemonadeBeingPurchased;
 
 
         //Ctor
         public Man()
         {
-            oddsOfLemonadeBeingPurchased = ChancesOfBuyingBasedOnLemomnadeRecipe();
         }
 
         //Methods
@@ -32,49 +30,27 @@ namespace LemonadeStand
 
         public new void IceCubePreference()
         {
-            if (lemonadeRecipe.iceCubesInRecipe <= 1)
-            {
-                iceInRecipe = true;
-            }
-
+            
         }
 
         public new void SugarPreference()
         {
-            if (lemonadeRecipe.sugarCupsInRecipe <= 3)
-            {
-                sugarInRecipe = true;
-            }
+          
         }
 
         public new void LemonPreference()
         {
-            if (lemonadeRecipe.lemonsInRecipe <= 4)
-            {
-                lemonsInRecipe = true;
-            }
+           
         }
 
         public new void PriceWillingToPay()
         {
-            if (lemonadeRecipe.lemonadePrice >= .20)
-            {
-                priceofLemonade = true;
-            }
+            
         }
 
-        public new int ChancesOfBuyingBasedOnLemomnadeRecipe()
+        public new void ChancesOfBuyingBasedOnLemomnadeRecipe()
         {
-            if (sugarInRecipe && lemonsInRecipe && iceInRecipe && priceofLemonade == true)
-            {
-                return RandomNumbers(1, 2);
-                
-            }
-            else if (sugarInRecipe && iceInRecipe == true)
-            {
-                return RandomNumbers(3, 10);
-            }
-            return 0;
+           
         }
 
     }
