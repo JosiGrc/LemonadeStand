@@ -176,7 +176,7 @@ namespace LemonadeStand
             return standInventory.sugarCups;
         }
 
-        public void MakingLemonade()
+        public void LoosingItemsFromRecipe()
         {
             AddingIceToLemonade();
             AddingSugarToLemonade();

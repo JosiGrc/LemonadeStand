@@ -69,11 +69,8 @@ namespace LemonadeStand
                 Console.ReadLine();
                 Console.Clear();
                 DisplayDay();
-                myRecipe.IceCubesPerCups();                
-                myRecipe.LemonsInRecipe();
-                myRecipe.SugarCupsInRecipe();
-                myRecipe.PriceOfLemonade();
-                lemonadeStand.MakingLemonade();
+                myRecipe.MakingLemonade();                
+                lemonadeStand.LoosingItemsFromRecipe();
                 SellLemonade();
                 lemonadeStand.LemonadeStandInventory();
                 ProfitOfTheDay();

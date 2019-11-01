@@ -51,6 +51,16 @@ namespace LemonadeStand
             return lemonadePrice;
         }
 
+        public void MakingLemonade()
+        {
+            IceCubesPerCups();
+            SugarCupsInRecipe();
+            LemonsInRecipe();
+            PriceOfLemonade();
+        }
+
+
+
         public void RemakingLemonade()
         {
             if(cupsPerPithcer == 0)
