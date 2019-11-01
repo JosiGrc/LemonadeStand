@@ -23,7 +23,7 @@ namespace LemonadeStand
             sugarCups = 0;
             cups = 0;
             iceCubes = 0;
-            money = 15.75;
+            money = 20;
 
         }
 

@@ -34,13 +34,13 @@ namespace LemonadeStand
         }
         public int SugarCupsInRecipe()
         {
-            Console.WriteLine("How many cups of sugar would you like to have in a pitcher of Lemoade?");
+            Console.WriteLine("How many cups of sugar would you like to have in a pitcher of Lemonade?");
             sugarCupsInRecipe = int.Parse(Console.ReadLine());
             return sugarCupsInRecipe;
         }
         public int IceCubesPerCups()
         {
-            Console.WriteLine("How many sugar cubes are going to be in a cup of Lemonade?");
+            Console.WriteLine("How many ice cubes are going to be in a cup of Lemonade?");
             iceCubesInRecipe = int.Parse(Console.ReadLine());
             return iceCubesInRecipe;
         }

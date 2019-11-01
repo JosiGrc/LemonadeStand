@@ -24,9 +24,9 @@ namespace LemonadeStand
         public Store()
         {
             lemonPrice = .25;
-            sugarCupsPrice = .75;
+            sugarCupsPrice = .50;
             icePrice = .10;
-            cupsPrice = .99;
+            cupsPrice = .50;
                   
         }
 

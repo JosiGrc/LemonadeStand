@@ -12,6 +12,7 @@ namespace LemonadeStand
         {
             Game game = new Game();
             game.RunGame();
+            //game.SellLemonade();
             //Stand stand = new Stand();
             //stand.BuyingItems();
 

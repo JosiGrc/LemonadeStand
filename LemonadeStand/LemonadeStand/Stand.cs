@@ -33,7 +33,8 @@ namespace LemonadeStand
 
         public void LemonadeStandInventory()
         {
-            Console.WriteLine("You have " + standInventory.cups + " cups, " + standInventory.iceCubes + " ice cubes " + standInventory.lemons + " lemons " + standInventory.sugarCups + " and cups of sugar.");
+            Console.WriteLine("You have " + standInventory.cups + " cups, " + standInventory.iceCubes + " ice cubes " + standInventory.lemons + " lemons " + standInventory.sugarCups + " cups of sugar, and " + standInventory.money + " available to spend.");
+            
         }
 
         public void AddingLemonsToInvetory()
@@ -118,32 +119,34 @@ namespace LemonadeStand
 
         public void BuyingItems()
         {
+            Console.Clear();
+            LemonadeStandInventory();
             Console.WriteLine("What would you like to buy today, cups, ice, sugar, lemons or nothing?");
             string itemsBeingBought = Console.ReadLine();
             switch (itemsBeingBought)
             {
                 case "cups":
                     myStore.BuyingCups();
-                    AddingCupsToInventory();
                     MoneyLostFromBuyingCups();
+                    AddingCupsToInventory();
                     BuyingItems();
                     break;
                 case "ice":
                     myStore.BuyingIce();
-                    AddingIceToInventory();
                     MoneyLostFromBuyingIce();
+                    AddingIceToInventory();
                     BuyingItems();
                     break;
                 case "sugar":
                     myStore.BuyingSugar();
-                    AddingSugarToInventory();
                     MoneyLostFromBuyingSugar();
+                    AddingSugarToInventory();
                     BuyingItems();
                     break;
                 case "lemons":
                     myStore.BuyingLemons();
-                    AddingLemonsToInvetory();
                     MoneyLostFromBuyingLemons();
+                    AddingLemonsToInvetory();
                     BuyingItems();
                     break;
                 case "nothing":
@@ -155,37 +158,36 @@ namespace LemonadeStand
             }
         }
 
+        public int AddingIceToLemonade()
+        {
+            standInventory.iceCubes -= myLemonadeRecipe.iceCubesInRecipe;
+            return standInventory.iceCubes;
+        }
 
+        public int AddingLemonsToLemonade()
+        {
+            standInventory.lemons -= myLemonadeRecipe.lemonsInRecipe;
+            return standInventory.lemons;
+        }
 
+        public int AddingSugarToLemonade()
+        {
+            standInventory.sugarCups -= myLemonadeRecipe.sugarCupsInRecipe;
+            return standInventory.sugarCups;
+        }
+
+        public void MakingLemonade()
+        {
+            AddingIceToLemonade();
+            AddingSugarToLemonade();
+            AddingLemonsToLemonade();
+        }
 
 
         public void AvailableMoney()
         {
             Console.WriteLine("You have " + standInventory.money + " available to spend today");
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        }       
 
         public void ChargingForLemonade()
         {

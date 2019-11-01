@@ -57,35 +57,35 @@ namespace LemonadeStand
         {
             Console.WriteLine("For how many days is the lemonade stand going to be up for?");
             daysPlaying = int.Parse(Console.ReadLine());
+            ValidateDaysPlaying();
             Console.WriteLine("What do you want to name your Lemonade Stand?");
             lemonadeStandName = Console.ReadLine();
             Console.Clear();
 
             for (int i = 0; i < daysPlaying; daysPlaying--) 
             {
-                DisplayDay();
-                lemonadeStand.LemonadeStandInventory();
-                AvailableMoney();
                 lemonadeStand.BuyingItems();            
-                lemonadeStand.LemonadeStandInventory();
-                lemonadeStand.AvailableMoney();
                 Console.WriteLine("Press any key to sell lemonade for today");
-                Console.Clear();
                 Console.ReadLine();
                 Console.Clear();
-                today.GetWeather();
-                today.GetTemperature();
+                DisplayDay();
+                myRecipe.IceCubesPerCups();                
+                myRecipe.LemonsInRecipe();
+                myRecipe.SugarCupsInRecipe();
+                myRecipe.PriceOfLemonade();
+                lemonadeStand.MakingLemonade();
                 SellLemonade();
                 lemonadeStand.LemonadeStandInventory();
-                lemonadeStand.AvailableMoney();
+                ProfitOfTheDay();
                 Console.WriteLine("Press any key to sell lemonade for tomorrow");
                 Console.ReadLine();
                 Console.Clear();             
 
-
+              
 
             }
 
+            EndGame();
 
 
 
@@ -99,33 +99,18 @@ namespace LemonadeStand
 
         public void SellLemonade()
         {
-            today.GenerateCustomers();
-            myRecipe.IceCubesPerCups();
-            myRecipe.LemonsInRecipe();
-            myRecipe.SugarCupsInRecipe();
+            today.GenerateCustomers();      
             for (int i = 0; i < today.customerList.Count; i++)
             {
                 //lemonadeStand.SellignLemonadeToMen();
                 //lemonadeStand.SellingLemonadeToChildren();
                 //lemonadeStand.SellingLemonadeToWomen();
                 lemonadeStand.myLemonadeRecipe.cupsPerPithcer--;
+                CheckSuplies();
                 lemonadeStand.standInventory.cups--;
-                lemonadeStand.standInventory.iceCubes -= myRecipe.lemonsInRecipe;
-                lemonadeStand.standInventory.lemons -= myRecipe.lemonsInRecipe;
-                lemonadeStand.standInventory.sugarCups -= myRecipe.sugarCupsInRecipe;
+                CheckSuplies();
                 lemonadeStand.standInventory.money += myRecipe.lemonadePrice;
                 lemonadeStand.cupsBoughtToday++;
-
-                if(lemonadeStand.myLemonadeRecipe.cupsPerPithcer == 0)
-                {
-                    lemonadeStand.myLemonadeRecipe.RemakingLemonade();
-                }
-
-                else if (lemonadeStand.standInventory.cups == 0 || lemonadeStand.standInventory.iceCubes == 0 || lemonadeStand.standInventory.lemons == 0 || lemonadeStand.standInventory.sugarCups == 0)
-                {
-                    Console.WriteLine("You're out of " + lemonadeStand.standInventory.Equals(0));
-                }
-
 
             } 
 
@@ -134,7 +119,7 @@ namespace LemonadeStand
         public void ProfitOfTheDay()
         {
             lemonadeStand.moneyEarned += myRecipe.lemonadePrice;
-            Console.WriteLine("Today you " +lemonadeStandName + "earned " + lemonadeStand.moneyEarned );
+            Console.WriteLine("Today " + lemonadeStandName + " earned " + lemonadeStand.moneyEarned );
         }
 
         public void ToTalProfit()
@@ -143,10 +128,7 @@ namespace LemonadeStand
             Console.WriteLine("Over the course of " + daysPlaying + lemonadeStandName + "eraned a total of " + lemonadeStand.totalMoneyEarned);
         }
 
-        public void AvailableMoney()
-        {
-            lemonadeStand.AvailableMoney();
-        }
+     
 
         public int ValidateDaysPlaying()
         {
@@ -156,6 +138,47 @@ namespace LemonadeStand
                 return ValidateDaysPlaying();
             }
             return daysPlaying;
+        }
+
+        public void EndGame()
+        {
+            if (daysPlaying == 0)
+            {
+                ToTalProfit();
+                if (lemonadeStand.totalMoneyEarned > 0)
+                {
+                    Console.WriteLine("Congratulations on the earings, hopefully you can put these economics to good use IRL");
+                }
+                else if (lemonadeStand.totalMoneyEarned < 0)
+                {
+                    Console.WriteLine("You took an L for this game, bumer");
+                }
+            }
+        }
+
+        public void CheckSuplies()
+        {
+            if (lemonadeStand.myLemonadeRecipe.cupsPerPithcer == lemonadeStand.cupsBoughtToday)
+            {
+                lemonadeStand.myLemonadeRecipe.RemakingLemonade();
+            }
+            else if (lemonadeStand.standInventory.iceCubes == 0)
+            {
+                Console.WriteLine("Youre out of ice");
+            }
+            else if (lemonadeStand.standInventory.lemons == 0)
+            {
+                Console.WriteLine("Youre out of lemons");
+            }
+            else if (lemonadeStand.standInventory.sugarCups == 0)
+            {
+                Console.WriteLine("Youre out of sugar");
+            }
+            else if (lemonadeStand.standInventory.cups == 0)
+            {
+                Console.WriteLine("Youre out of cups");
+            }
+
         }
 
 
