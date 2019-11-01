@@ -119,14 +119,14 @@ namespace LemonadeStand
                 if(lemonadeStand.myLemonadeRecipe.cupsPerPithcer == 0)
                 {
                     lemonadeStand.myLemonadeRecipe.RemakingLemonade();
-
-                    if (lemonadeStand.standInventory.cups == 0 || lemonadeStand.standInventory.iceCubes == 0 || lemonadeStand.standInventory.lemons == 0 || lemonadeStand.standInventory.sugarCups == 0)
-                    {
-                        Console.WriteLine("You're out of " + lemonadeStand.standInventory.Equals(0));
-                    }
                 }
 
-               
+                else if (lemonadeStand.standInventory.cups == 0 || lemonadeStand.standInventory.iceCubes == 0 || lemonadeStand.standInventory.lemons == 0 || lemonadeStand.standInventory.sugarCups == 0)
+                {
+                    Console.WriteLine("You're out of " + lemonadeStand.standInventory.Equals(0));
+                }
+
+
             } 
 
         }

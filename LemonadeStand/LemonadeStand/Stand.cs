@@ -74,7 +74,7 @@ namespace LemonadeStand
         public double MoneyLostFromBuyingSugar()
         {
             double totalCost = myStore.sugarCupsBought * myStore.sugarCupsPrice;
-            if (standInventory.money > totalCost)
+            if (standInventory.money < totalCost)
             {
                 Console.WriteLine("You can't afford sugar, I hope the unsweetened version of what you're making taste good.");
             }
@@ -89,7 +89,7 @@ namespace LemonadeStand
         public double MoneyLostFromBuyingIce()
         {
             double totalCost = myStore.iceCubesBought * myStore.icePrice;
-            if (standInventory.money > totalCost)
+            if (standInventory.money < totalCost)
             {
                 Console.WriteLine("Ouch water in a solid state is too pricy for you? Best rethink some life decisions.");
             }
@@ -104,7 +104,7 @@ namespace LemonadeStand
         public double MoneyLostFromBuyingCups()
         {
             double totalCost = myStore.cupsBought * myStore.cupsPrice;
-            if (standInventory.money > totalCost)
+            if (standInventory.money < totalCost)
             {
                 Console.WriteLine("Wow not even able to afford something so cheap, these are rough time indeed.");
             }
@@ -126,23 +126,30 @@ namespace LemonadeStand
                     myStore.BuyingCups();
                     AddingCupsToInventory();
                     MoneyLostFromBuyingCups();
+                    BuyingItems();
                     break;
                 case "ice":
                     myStore.BuyingIce();
                     AddingIceToInventory();
                     MoneyLostFromBuyingIce();
+                    BuyingItems();
                     break;
                 case "sugar":
                     myStore.BuyingSugar();
                     AddingSugarToInventory();
                     MoneyLostFromBuyingSugar();
+                    BuyingItems();
                     break;
                 case "lemons":
                     myStore.BuyingLemons();
                     AddingLemonsToInvetory();
                     MoneyLostFromBuyingLemons();
+                    BuyingItems();
                     break;
                 case "nothing":
+                    break;
+                default:
+                    BuyingItems();
                     break;
 
             }
