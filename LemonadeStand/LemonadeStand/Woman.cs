@@ -10,9 +10,19 @@ namespace LemonadeStand
     {
         //Member Variables
         LemonadeRecipe lemonadeRecipe = new LemonadeRecipe();
+        public bool lemonsInRecipe;
+        public bool iceInRecipe;
+        public bool sugarInRecipe;
+        public bool priceofLemonade;
+        public int oddsOfLemonadeBeingPurchased;
+
 
 
         //Ctor
+        public Woman()
+        {
+            oddsOfLemonadeBeingPurchased = ChancesOfBuyingBasedOnLemomnadeRecipe();
+        }
 
         //Methods
         public new int RandomNumbers(int min, int max)
@@ -25,7 +35,7 @@ namespace LemonadeStand
         {
             if(lemonadeRecipe.iceCubesInRecipe <= 2)
             {
-                ChancesOfBuyingLemomnade();
+                iceInRecipe = true;
             }
 
         }
@@ -34,7 +44,7 @@ namespace LemonadeStand
         {
             if(lemonadeRecipe.sugarCupsInRecipe <= 3)
             {
-                ChancesOfBuyingLemomnade();
+                sugarInRecipe = true;
             }
         }
 
@@ -42,7 +52,7 @@ namespace LemonadeStand
         {
             if(lemonadeRecipe.lemonsInRecipe <= 5)
             {
-                ChancesOfBuyingLemomnade();
+                lemonsInRecipe = true;
             }
         }
 
@@ -50,13 +60,25 @@ namespace LemonadeStand
         {
             if(lemonadeRecipe.lemonadePrice <= .25)
             {
-                ChancesOfBuyingLemomnade();
+                priceofLemonade = true;
             }
         }
 
-        public new void ChancesOfBuyingLemomnade()
+        public new int ChancesOfBuyingBasedOnLemomnadeRecipe()
         {
+            Inventory inventory = new Inventory();
 
+            if (sugarInRecipe && lemonsInRecipe && iceInRecipe && priceofLemonade == true)
+            {
+                RandomNumbers(1, 2);
+            }
+            else if (sugarInRecipe && iceInRecipe == true)
+            {
+                RandomNumbers(1, 7);
+            }
+
+            return 0;
+            
         }
     }
 }

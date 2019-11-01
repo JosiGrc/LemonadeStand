@@ -10,13 +10,10 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
-            game.RunGame();
-            //double money = 10;
-            //int lemonsBought = 2;
-            //Store store = new Store();
-            //store.MoneyLostFromBuyingLemons(money, lemonsBought);
-            //Day day = new Day();
+            //Game game = new Game();
+            //game.RunGame();
+            Store store = new Store();
+            store.BuyingItems();
 
             Console.ReadLine();
            

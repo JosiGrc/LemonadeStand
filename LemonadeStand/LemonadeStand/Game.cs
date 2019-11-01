@@ -66,12 +66,21 @@ namespace LemonadeStand
                 DisplayDay();
                 lemonadeStand.LemonadeStandInventory();
                 AvailableMoney();
-                store.BuyingCups();
-                store.BuyingIce();
-                store.BuyingLemons();
-                store.BuyingSugar();
-
-                
+                lemonadeStand.BuyingItems();            
+                lemonadeStand.LemonadeStandInventory();
+                lemonadeStand.AvailableMoney();
+                Console.WriteLine("Press any key to sell lemonade for today");
+                Console.Clear();
+                Console.ReadLine();
+                Console.Clear();
+                today.GetWeather();
+                today.GetTemperature();
+                SellLemonade();
+                lemonadeStand.LemonadeStandInventory();
+                lemonadeStand.AvailableMoney();
+                Console.WriteLine("Press any key to sell lemonade for tomorrow");
+                Console.ReadLine();
+                Console.Clear();             
 
 
 
@@ -96,6 +105,9 @@ namespace LemonadeStand
             myRecipe.SugarCupsInRecipe();
             for (int i = 0; i < today.customerList.Count; i++)
             {
+                //lemonadeStand.SellignLemonadeToMen();
+                //lemonadeStand.SellingLemonadeToChildren();
+                //lemonadeStand.SellingLemonadeToWomen();
                 lemonadeStand.myLemonadeRecipe.cupsPerPithcer--;
                 lemonadeStand.standInventory.cups--;
                 lemonadeStand.standInventory.iceCubes -= myRecipe.lemonsInRecipe;

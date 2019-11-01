@@ -41,7 +41,7 @@ namespace LemonadeStand
 
         }
 
-        public void ChancesOfBuyingLemomnade()
+        public void ChancesOfBuyingBasedOnLemomnadeRecipe()
         {
 
         }
@@ -51,6 +51,9 @@ namespace LemonadeStand
 
         }
 
+        //public void ChancesOfBuyingLemonadeBasedOnWeather()
+        //{
 
+        //}
     }
 }
